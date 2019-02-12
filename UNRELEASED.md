@@ -10,6 +10,8 @@ Use [the changelog guidelines](https://git.io/polaris-changelog-guidelines) to f
 
 ### Enhancements
 
+- Added `download` prop to `Button` and `UnstyledLink` components to let you set the download attribute ([#1027](https://github.com/Shopify/polaris-react/pull/1027))
+
 ### Bug fixes
 
 ### Documentation

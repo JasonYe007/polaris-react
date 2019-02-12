@@ -10,6 +10,8 @@ export interface Props extends React.HTMLProps<HTMLAnchorElement> {
   url: string;
   /** Forces url to open in a new tab */
   external?: boolean;
+  /** Tells the browser to download the url instead of opening it. Value is the hint for the saved filename. */
+  download?: string | boolean;
   /**	Content to display inside the link */
   children?: React.ReactNode;
   [key: string]: any;

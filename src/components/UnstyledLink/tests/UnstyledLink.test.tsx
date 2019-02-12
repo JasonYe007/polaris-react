@@ -39,4 +39,20 @@ describe('<UnstyledLink />', () => {
       expect(anchorElement.prop('rel')).toBe('noopener noreferrer');
     });
   });
+
+  describe('download', () => {
+    it('adds the correct boolean attributes', () => {
+      const anchorElement = mountWithAppProvider(
+        <UnstyledLink download url="https://shopify.com" />,
+      ).find('a');
+      expect(anchorElement.prop('download')).toBe(true);
+    });
+
+    it('adds the correct string attributes', () => {
+      const anchorElement = mountWithAppProvider(
+        <UnstyledLink download="file.txt" url="https://shopify.com" />,
+      ).find('a');
+      expect(anchorElement.prop('download')).toBe('file.txt');
+    });
+  });
 });
