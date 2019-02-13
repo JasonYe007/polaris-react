@@ -289,13 +289,12 @@ class ToastExample extends React.Component {
     const {showToast} = this.state;
     const toastMarkup = showToast ? (
       <Toast
-        content="No internet connection"
+        content="Image deleted"
         action={{
-          content: 'Retry',
+          content: 'Undo',
           onAction: () => {},
         }}
         duration={10000}
-        error
         onDismiss={this.toggleToast}
       />
     ) : null;

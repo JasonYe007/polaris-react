@@ -4,7 +4,7 @@ $Backdrop-opacity: 0.88;
 .Toast {
   @include text-style-display-small;
   display: inline-flex;
-  max-width: rem(720px);
+  max-width: rem(500px);
   padding: spacing(tight) spacing();
   border-radius: border-radius();
   background: rgba(color('black'), $Backdrop-opacity);

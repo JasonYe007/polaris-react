@@ -2,7 +2,7 @@ import * as React from 'react';
 import {classNames} from '@shopify/react-utilities';
 
 import {Key} from '../../../../types';
-import Link from '../../../Link';
+import Button from '../../../Button';
 
 import Icon from '../../../Icon';
 import KeypressListener from '../../../KeypressListener';
@@ -38,9 +38,9 @@ export default class Toast extends React.Component<Props, never> {
 
     const actionMarkup = action ? (
       <div className={styles.ActionLink}>
-        <Link monochrome onClick={action.onAction}>
+        <Button plain monochrome onClick={action.onAction}>
           {action.content}
-        </Link>
+        </Button>
       </div>
     ) : null;
 
