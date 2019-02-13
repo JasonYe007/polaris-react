@@ -415,8 +415,7 @@ On iOS, icons are available for cases where you want to re-inforce the message.
 
 <!-- example-for: android, ios -->
 
-Use action when you have the ability to act on the message. For example, undo changes, or edit message.
-Keep the action label short, preferably 1 verb action.
+Use action when merchants have the ability to act on the message. For example, to undo a change, or retry an action. Keep the action label short, preferably 1 verb action.
 
 <!-- content-for: android -->
 
