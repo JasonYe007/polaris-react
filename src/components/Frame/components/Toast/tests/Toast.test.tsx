@@ -2,7 +2,7 @@ import * as React from 'react';
 import {timer} from '@shopify/jest-dom-mocks';
 import {mountWithAppProvider, trigger} from 'test-utilities';
 import {noop} from 'utilities/other';
-import Link from '../../../../Link';
+import Button from '../../../../Button';
 import {ToastProps as Props} from '../../../types';
 import Toast from '../Toast';
 import {Key} from '../../../../../types';
@@ -38,7 +38,7 @@ describe('<Toast />', () => {
     });
   });
 
-  describe('action <Link />', () => {
+  describe('action', () => {
     const mockAction = {
       content: 'Do something',
       onAction: noop,
@@ -46,7 +46,7 @@ describe('<Toast />', () => {
 
     it('does not render when not defined', () => {
       const message = mountWithAppProvider(<Toast {...mockProps} />);
-      expect(message.find(Link)).toHaveLength(0);
+      expect(message.find(Button)).toHaveLength(0);
     });
 
     it('renders when defined', () => {
@@ -54,7 +54,7 @@ describe('<Toast />', () => {
         <Toast {...mockProps} action={mockAction} />,
       );
 
-      expect(message.find(Link)).toHaveLength(1);
+      expect(message.find(Button)).toHaveLength(1);
     });
 
     it('passes content as button text', () => {
@@ -62,7 +62,7 @@ describe('<Toast />', () => {
         <Toast {...mockProps} action={mockAction} />,
       );
 
-      expect(message.find(Link).text()).toBe(mockAction.content);
+      expect(message.find(Button).text()).toContain(mockAction.content);
     });
 
     it('triggers onAction when button is clicked', () => {
@@ -72,7 +72,7 @@ describe('<Toast />', () => {
         <Toast {...mockProps} action={mockActionWithSpy} />,
       );
 
-      trigger(message.find(Link), 'onClick');
+      trigger(message.find(Button), 'onClick');
 
       expect(spy).toHaveBeenCalledTimes(1);
     });
