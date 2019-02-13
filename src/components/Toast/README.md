@@ -68,10 +68,18 @@ class EmbeddedAppToastExample extends React.Component {
 
 Toast should:
 
-- Be used for short messages to confirm an action. Maximum of 2 lines of text.
-- Not be used for actionable links or messages.
-- Not be used for error messages.
-- Be displayed once at the time. If you need multiple toasts, queue them.
+- Be used for short messages to confirm an action.
+- Not go over 3 words.
+- Rarely be used for error messages.
+
+When to use:
+
+- For success messages
+- Only for non-critical errors that are relevant in the moment and can be explained in 3 words. For example, if there’s an internet connection issue, the toast would say, [Internet disconnected].
+
+When not to use:
+
+- Avoid using toasts for error messages. Always try to use a banner to prominently inform merchants about persistent errors.
 
 ---
 
@@ -79,7 +87,7 @@ Toast should:
 
 ### Message
 
-Messages should be:
+Toast messages should be:
 
 - Short and affirmative
 - Written in the pattern of: noun + verb
@@ -91,10 +99,12 @@ Messages should be:
 - Product updated
 - Collection added
 - Customer updated
-- No internet connection
+- Internet disconnected
+- Connection timed out
 
 #### Don’t
 
+- No internet connection
 - Your product has been successfully updated
 - We were unable to save the customer
 - Your Order was Archived Today
@@ -102,12 +112,17 @@ Messages should be:
 
 <!-- end -->
 
-### Action
+### Toasts with actions
+
+Only include actions in toasts if the same action is available elsewhere on the page. For example:
+
+- If merchants need to reload a section, offer the call to action [Reload] in the toast message. If they miss the toast, they can also refresh the entire page.
+- If merchants delete an image, offer the option to [Undo] the deletion. If they miss it in the toast, they can still retrieve it from {x}.
 
 Action should:
 
 - Keep the action label short. Preferably 1 verb
-- Not have actions for dismissing toast
+- Not have actions, like [Cancel], for dismissing toast. The [X] to dismiss is already included in the component.
 
 <!-- usagelist -->
 
@@ -347,7 +362,7 @@ On iOS, icons are available for cases where you want to re-inforce the message.
 
 <!-- example-for: android, ios, web -->
 
-Use error toast to indicate that an operation has failed. For example, your phone is offline and need to reconnect to the internet. For all other error message types, follow the [error message guidelines](/patterns/error-messages).
+Although error toasts are still available and used in the system, we discourage their use. Reserve it for errors not caused by merchants, like a connection issue. Error toasts should convey what went wrong in plain language and should not go over 3 words. For all other error message types, follow the [error message guidelines](/patterns/error-messages).
 
 <!-- content-for: web -->
 
